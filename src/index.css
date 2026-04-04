@@ -1,13 +1,244 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px 24px 24px;
+  max-width: 400px;
+  width: 90vw;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  position: relative;
+  text-align: left;
+}
+
+.modal-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #051c33;
+}
+
+.modal-desc {
+  font-size: 1em;
+  margin-bottom: 18px;
+  color: #333;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.modal-vote {
+  font-size: 1.1em;
+  color: #0a5c2c;
+  font-weight: 600;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-close:hover {
+  color: #d00;
+}
+body {
+  text-align: center;
+  font-family:
+    "Josefin Sans" Arial,
+    Helvetica,
+    sans-serif;
+  color: #3f4850;
+}
+
+h1 {
+  font-family: "Lobster", "Josefin Sans", Arial, Helvetica, sans-serif;
+  font-size: 4em;
+  color: "red";
+}
+
+h2 {
+  font-size: 2em;
+  margin: 52px 0 40px;
+  text-transform: capitalize;
+  color: #051c33;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.is-hidden {
+  border: 0;
+}
+
+.search-form {
+  display: flex;
+  max-width: max-content;
+  margin: auto;
+}
+
+.search-form button {
+  outline: none;
+  padding: 0px 5px;
+  border-radius: 0.35em 0 0 0.35em;
+  cursor: pointer;
+  border: 2px solid #d7dbdf;
+}
+
+.active {
+  background-color: #051c33;
+  cursor: pointer;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #051c33;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main-nav a {
+  display: block;
+  background: #051c33;
+  border-radius: 3px;
+  padding: 5px;
+  color: #fff;
+}
+
+.main-nav li {
+  width: 100%;
+  margin-bottom: 1em;
+  margin: 10px;
+  width: 100px;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav .active,
+.main-nav a:hover {
+  background-color: #051c33;
+}
+
+.input {
+  font-size: 1em;
+  width: 100%;
+  background-color: #edeff0;
+  padding: 10px 15px;
+  border: 3px solid #d7dbdf;
+  border-right: none;
+  border-radius: 0.35m 0 0 0.35em;
+  outline: none;
+}
+
+.masonry-container {
+  margin: 0 auto 32px auto;
+  padding: 0 10px;
+}
+
+.masonry-grid {
+  display: flex;
+  gap: 24px;
+}
+
+.gallery-container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+.movie-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    0 1.5px 4px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom: 24px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 12px;
+  height: 400px;
+  min-width: 200px;
+  max-width: 220px;
+}
+.movie-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.18),
+    0 3px 8px rgba(0, 0, 0, 0.12);
+}
+.movie-image-wrapper {
+  width: 200px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+.movie-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.movie-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #222;
+  margin-top: 12px;
+  text-align: center;
+  padding: 0 8px;
+  min-height: 2.5em;
+  max-height: 3.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.gallery-container {
+  width: 80%;
+}
+
+.gallery-container img {
+  width: 200px;
+  height: 350px;
 }
