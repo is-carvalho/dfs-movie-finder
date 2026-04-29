@@ -38,7 +38,10 @@ function App() {
         <div>
           <Headerwrapper />
           <Routes>
-            <Route path="/" element={<Navigate to="animation" replace />} />
+            <Route
+              path="/dfs-movie-finder"
+              element={<Navigate to="animation" replace />}
+            />
             <Route
               path="/animation"
               element={<Item searchTerm="The-Incredibles" />}
