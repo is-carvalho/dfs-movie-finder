@@ -34,7 +34,7 @@ function Headerwrapper() {
 function App() {
   return (
     <MovieContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={"/dfs-movie-finder"}>
         <div>
           <Headerwrapper />
           <Routes>
